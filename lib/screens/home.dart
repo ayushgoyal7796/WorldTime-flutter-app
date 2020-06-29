@@ -10,11 +10,10 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    data = ModalRoute.of(context).settings.arguments;
+    data = data.isNotEmpty ? data : ModalRoute.of(context).settings.arguments;
 
     String bgImage = data['isDayTime'] ? 'day.png' : 'night.png';
     Color bgColor = data['isDayTime'] ? Colors.blue : Colors.indigo[700];
-    print(data);
 
     return Scaffold(
       backgroundColor: bgColor,
@@ -32,8 +31,14 @@ class _HomeScreenState extends State<HomeScreen> {
                 height: 120.0,
               ),
               FlatButton.icon(
-                onPressed: () {
-                  Navigator.pushNamed(context, '/choose_location');
+                onPressed: () async {
+                  dynamic result =
+                      await Navigator.pushNamed(context, '/choose_location');
+                  if (result != null) {
+                    setState(() {
+                      data = result;
+                    });
+                  }
                 },
                 icon: Icon(
                   Icons.edit_location,

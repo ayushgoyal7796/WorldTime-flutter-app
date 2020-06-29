@@ -12,7 +12,7 @@ class _ChooseLocationScreenState extends State<ChooseLocationScreen> {
       backgroundColor: Colors.grey[200],
       appBar: AppBar(
         backgroundColor: Colors.blue[900],
-        title: Text('Choose a Location'),
+        title: Text('Choose Location'),
         centerTitle: true,
         elevation: 0.0,
       ),

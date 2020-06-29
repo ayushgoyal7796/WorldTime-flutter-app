@@ -2,14 +2,14 @@ import 'package:http/http.dart';
 import 'package:intl/intl.dart';
 import 'dart:convert';
 
-class WorldTime {
+class WorldTimeService {
   String location;
   String flag;
   String url;
   String time;
   bool isDayTime;
 
-  WorldTime({this.location, this.flag, this.url});
+  WorldTimeService({this.location, this.flag, this.url});
 
   Future<void> getTime() async {
     try {

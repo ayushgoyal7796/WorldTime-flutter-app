@@ -57,6 +57,13 @@ class _HomeScreenState extends State<HomeScreen> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
+                  CircleAvatar(
+                    backgroundImage:
+                        AssetImage('assets/images/${data['flag']}'),
+                  ),
+                  SizedBox(
+                    width: 20.0,
+                  ),
                   Text(
                     data['location'],
                     style: TextStyle(

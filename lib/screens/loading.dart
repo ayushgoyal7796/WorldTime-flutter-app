@@ -10,7 +10,10 @@ class LoadingScreen extends StatefulWidget {
 class _LoadingScreenState extends State<LoadingScreen> {
   setupWorldTime() async {
     WorldTimeService _worldTime = WorldTimeService(
-        location: 'Berlin', flag: 'germany.png', url: 'Europe/Berlin');
+      location: 'Berlin',
+      flag: 'germany.png',
+      url: 'Europe/Berlin',
+    );
     await _worldTime.getTime();
     Navigator.pushReplacementNamed(
       context,
